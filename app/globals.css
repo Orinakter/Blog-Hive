@@ -13,6 +13,9 @@
     --foreground: #ededed;
   }
 }
+ul .active{
+  color:  #F98866;
+}
 
 body {
   color: var(--foreground);
