@@ -38,6 +38,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1 gap-6 text-[#F98866]">
             <Link href="/"><li>Home</li></Link>
             <Link href="/Profile"><li>Profile</li></Link>
+            <Link href="/blog"><li>Blog</li></Link>
             
             
           </ul>

@@ -4,20 +4,30 @@ import { Image } from 'next/image';
 
 const Banner = () => {
     return (
-        <div>
-            <div className="hero bg-[#FFF2D7] min-h-screen">
-  <div className="hero-content flex-col lg:flex-row gap-12">
-   <img src="https://i.ibb.co.com/wNX969F/pexels-picography-4458.jpg" className='w-full h-[450px] rounded-lg'></img>
-    <div>
-      <h1 className="text-4xl font-bold text-[#F98866]">Welcome to the Hive</h1>
-      <p className="py-6 text-[#F98866]">
-      Dive into a world buzzing with ideas, stories, and inspiration. Here, every post is a piece of nectar, crafted to inform and engage. Explore trending topics, insightful articles, and captivating stories.
-      </p>
-      
-    </div>
-  </div>
-</div>
+         <div className="carousel w-full min-h-[70vh] rounded-xl mt-5 ">
+        <div id="slide1" className="carousel-item relative w-full">
+          <div
+            style={{
+              background: `url("https://i.ibb.co.com/wNX969F/pexels-picography-4458.jpg")`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+            className="min-h-[70vh] w-full flex justify-center items-center "
+          >
+            <h1 className="text-xl md:text-2xl lg:text-4xl text-white font-bold">
+            Unlock the Buzz, Unleash the Storie
+            </h1>
+            
+          </div>
+  
+          
         </div>
+        <div>
+        <p className=''>Step into BlogHive, where ideas thrive and stories buzz with life. From trending topics to hidden gems, each post is a carefully crafted nectar of knowledge and inspiration. Discover, explore, and connect in this hive of unique perspectives.</p>
+        </div>
+        
+      </div>
     );
 };
 
