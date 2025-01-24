@@ -1,7 +1,15 @@
 import Link from "next/link";
 import React from "react";
+import Button from "./Button";
+import LogOutButton from "./LogOutButton";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
-const Navbar = () => {
+
+const Navbar = async() => {
+  const { isAuthenticated, getUser } = getKindeServerSession();
+  const isUserAuthenticated = await isAuthenticated();
+  const user = await getUser();
+ 
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -29,7 +37,7 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100  rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
                <Link href="/"><li>Home</li></Link>
-               <Link href="/Profile"><li>Profile</li></Link>
+               <Link href="/profile"><li>Profile</li></Link>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl text-[#F98866] ">BlogHive</a>
@@ -37,14 +45,20 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-6 text-[#F98866]">
             <Link href="/"><li>Home</li></Link>
-            <Link href="/Profile"><li>Profile</li></Link>
+            <Link href="/profile"><li>Profile</li></Link>
             <Link href="/blog"><li>Blog</li></Link>
             
             
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn bg-[#F98866] text-white">Login</a>
+        <div className="navbar-end flex items-center gap-3">
+          {
+            user && isUserAuthenticated?  <LogOutButton></LogOutButton>: <Button></Button>
+
+          }
+         
+         
+          
         </div>
       </div>
     </div>
