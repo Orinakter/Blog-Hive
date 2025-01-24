@@ -8,11 +8,15 @@ const Page = async () => {
  
   if (user && isUserAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <div className="bg-white p-10 rounded-lg shadow-md text-center">
-          <h1 className="text-2xl font-bold text-[#F98866] mb-4">
-            Welcome Back !
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className=" max-w-md w-full p-8 rounded-lg shadow-lg bg-white">
+          <h1 className="text-3xl font-bold text-[#F98866] mb-6">
+            Welcome to Your Profile!
           </h1>
+          <p className="text-gray-600 mb-6">
+            We're glad to see you again. Feel free to explore your profile or continue your journey.
+          </p>
+          
         </div>
       </div>
     );
